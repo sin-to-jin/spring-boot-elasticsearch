@@ -24,8 +24,8 @@ cd spring-boot-elasticsearch
 ### Insert data
 
 ``` sh
-curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"bitcoin","marketCapitalization":"46219389522.4","keywords": ["bitcoin","BTC"]}'
-curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"Ethereum","marketCapitalization":"31278008829.5","keywords": ["Ethereum","ETH"]}'
+curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"bitcoin","marketCapitalization":46219389522.4,"keywords": ["bitcoin","BTC"]}'
+curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"Ethereum","marketCapitalization":31278008829.5,"keywords": ["Ethereum","ETH"]}'
 curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"Ripple","marketCapitalization":12034938611.6,"keywords":["Ripple","XRP"]}'
 ```
 #### Check this data
