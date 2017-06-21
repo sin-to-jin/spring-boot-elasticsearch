@@ -1,0 +1,19 @@
+logging:
+  level:
+    root: INFO
+  org:
+    springframework:
+      web: DEBUG
+
+spring:
+  datasource:
+    initialize: false
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch_ogasawara.shinnosuke
+      cluster-nodes: localhost:9300
+      properties:
+        http:
+          enabled: true
+      repositories:
+        enabled: true
