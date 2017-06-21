@@ -28,6 +28,10 @@ curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"bitcoin","marke
 curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"Ethereum","marketCapitalization":"31278008829.5","keywords": ["Ethereum","ETH"]}'
 curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"Ripple","marketCapitalization":12034938611.6,"keywords":["Ripple","XRP"]}'
 ```
+#### Check this data
+``` sh
+curl http://localhost:9200/crypto-currencies/_search\?pretty
+```
 
 ### Operation data
 ``` sh
