@@ -5,6 +5,20 @@ To support elasticsearch v5.4 with spring-boot v2.0.0.M2.
 * Elasticsearch v5.4
 * Spring Boot v2.0.0.M2
 
+## How to Use
+*only Mac OS*
+
+``` sh
+brew cask install java
+brew install elasticsearch
+ln -sfv /usr/local/opt/elasticsearch/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
+git clone git@github.com:ogasawaraShinnosuke/spring-boot-elasticsearch.git
+cd spring-boot-elasticsearch
+./gradlew build
+./gradlew bootRun
+```
+
 ## Request examples
 
 ### Insert data
