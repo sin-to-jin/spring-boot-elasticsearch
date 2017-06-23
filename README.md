@@ -1,22 +1,36 @@
 # spring-boot-elasticsearch
-To support elasticsearch v5.4 with spring-boot v2.0.0.M2.
+To support elasticsearch v5.4 with spring-boot v2.0.0.M2 and Kibana v5.4, Fluentd v2.3.
 * Java v1.8
 * Gradle v4.0
-* Elasticsearch v5.4
 * Spring Boot v2.0.0.M2
+* Elasticsearch v5.4.2
+* Kibana v5.4.2
+* Fluentd v2.3
 
 ## How to Use
 *only Mac OS*
 
+### Install Java, Elasticsearch, Kibana
+
 ``` sh
 brew cask install java
-brew install elasticsearch
+brew install elasticsearch kibana
 ln -sfv /usr/local/opt/elasticsearch/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
 git clone git@github.com:ogasawaraShinnosuke/spring-boot-elasticsearch.git
 cd spring-boot-elasticsearch
 ./gradlew build
 ./gradlew bootRun
+```
+
+### Install Fluentd
+- install page is `https://td-agent-package-browser.herokuapp.com/2/macosx` .
+- [td-agent.conf](settings/etc/td-agent/td-agent.conf)
+
+``` sh
+sudo /opt/td-agent/embedded/bin/fluent-gem install fluent-plugin-elasticsearch
+sudo launchctl unload /Library/LaunchDaemons/td-agent.plist
+sudo launchctl load /Library/LaunchDaemons/td-agent.plist
 ```
 
 ## Request examples
@@ -29,11 +43,13 @@ curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"Ethereum","mark
 curl -XPOST http://localhost:8080/crypto-currencies -d '{"name":"Ripple","marketCapitalization":12034938611.6,"keywords":["Ripple","XRP"]}'
 ```
 #### Check this data
+
 ``` sh
 curl http://localhost:9200/crypto-currencies/_search\?pretty
 ```
 
 ### Operation data
+
 ``` sh
 # want to find list
 curl -XGET http://localhost:8080/crypto-currencies
@@ -47,4 +63,5 @@ curl -XGET http://localhost:8080/crypto-currencies/AVzJU4hHoL2ZelEv7YH5
 # want to delete docID (`AVzJU4hHoL2ZelEv7YH5` is uniq docID)
 curl -XDELETE http://localhost:8080/crypto-currencies/AVzJU4hHoL2ZelEv7YH5
 ```
+
 *Search by numerical value, List and BetWeen are not implemented yet*
