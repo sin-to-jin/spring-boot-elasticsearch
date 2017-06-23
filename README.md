@@ -6,6 +6,7 @@ To support elasticsearch v5.4 with spring-boot v2.0.0.M2 and Kibana v5.4, Fluent
 * Java v1.8
 * Gradle v4.0
 * Spring Boot v2.0.0.M2
+* Tomcat v8
 * Elasticsearch v5.4.2
 * Kibana v5.4.2
 * Fluentd v2.3
@@ -72,3 +73,22 @@ curl -XDELETE http://localhost:8080/crypto-currencies/AVzJU4hHoL2ZelEv7YH5
 ```
 
 *Search by numerical value, List and BetWeen are not implemented yet*
+
+### Summary Matrix System
+
+- Fluentd is to build Tomcat's unified logging layer with Elasticsearch, Kibana.
+
+```
+tomcat - fluentd
+  |         |
+ elasticsearch
+      |
+    kibana
+```
+
+Server|Port|Homebrew|Version
+:--:|:--:|:--:|:--:
+Tomcat|8080||v2.0.0.M2
+Fluentd|8888,24230||v2.3
+Elasticsearch|9200,9300|:heavy_check_mark:|v5.4.2
+Kibana|5601|:heavy_check_mark:|v5.4.2
