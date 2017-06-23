@@ -35,6 +35,10 @@ sudo launchctl load /Library/LaunchDaemons/td-agent.plist
 
 ## Request examples
 
+### Check kibana 
+
+- Access to `http://localhost:5601`
+
 ### Insert data
 
 ``` sh
