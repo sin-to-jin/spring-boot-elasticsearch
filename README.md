@@ -26,6 +26,12 @@ cd spring-boot-elasticsearch
 ### Install Fluentd
 `https://td-agent-package-browser.herokuapp.com/2/macosx`
 
+``` sh
+sudo /opt/td-agent/embedded/bin/fluent-gem install fluent-plugin-elasticsearch
+sudo launchctl unload /Library/LaunchDaemons/td-agent.plist
+sudo launchctl load /Library/LaunchDaemons/td-agent.plist
+```
+
 ## Request examples
 
 ### Insert data
