@@ -1,5 +1,6 @@
 # spring-boot-elasticsearch
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Official HP](https://img.shields.io/badge/official-homepage-green.svg)](https://ogasawarashinnosuke.github.io/spring-boot-elasticsearch/)
 
 To support elasticsearch v5.4 with spring-boot v2.0.0.M2 and Kibana v5.4, Fluentd v2.3.
 * Java v1.8
