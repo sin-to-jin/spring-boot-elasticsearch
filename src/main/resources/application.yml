@@ -1,5 +1,5 @@
 logging:
-  path: /var/log/spring-framework
+  file: logs/sbe.log
   level:
     root: INFO
   org:
@@ -11,7 +11,7 @@ spring:
     initialize: false
   data:
     elasticsearch:
-      cluster-name: elasticsearch_ogasawara.shinnosuke
+      cluster-name: elasticsearch_sinnosuke
       cluster-nodes: localhost:9300
       properties:
         http:

@@ -14,13 +14,29 @@ To support elasticsearch v5.4 with spring-boot v2.0.0.M2 and Kibana v5.4, Fluent
 ## How to Use
 *only Mac OS*
 
-### Install Java, Elasticsearch, Kibana
+### Install Java
 
 ``` sh
 brew cask install java
-brew install elasticsearch kibana
-ln -sfv /usr/local/opt/elasticsearch/*.plist ~/Library/LaunchAgents
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
+```
+
+### Install Elasticsearch
+
+``` sh
+brew install elasticsearch
+elasticsearch
+```
+
+### Install Kibana
+
+``` sh
+brew install kibana
+kibana
+```
+
+### Install this project
+
+``` sh
 git clone git@github.com:ogasawaraShinnosuke/spring-boot-elasticsearch.git
 cd spring-boot-elasticsearch
 ./gradlew build
@@ -28,14 +44,15 @@ cd spring-boot-elasticsearch
 ```
 
 ### Install Fluentd
-- install page is `https://td-agent-package-browser.herokuapp.com/2/macosx` .
-- [td-agent.conf](settings/etc/td-agent/td-agent.conf)
 
 ``` sh
+wget http://packages.treasuredata.com.s3.amazonaws.com/2/macosx/td-agent-2.3.0-0.dmg
 sudo /opt/td-agent/embedded/bin/fluent-gem install fluent-plugin-elasticsearch
 sudo launchctl unload /Library/LaunchDaemons/td-agent.plist
 sudo launchctl load /Library/LaunchDaemons/td-agent.plist
 ```
+
+- Settinds [td-agent.conf](settings/etc/td-agent/td-agent.conf)
 
 ## Request examples
 
