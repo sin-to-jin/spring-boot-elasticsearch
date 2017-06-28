@@ -104,7 +104,7 @@ tomcat - fluentd
     kibana
 ```
 
-Server|Port|Build In|Homebrew|dmg|Version
+Server|Port|Built In|Homebrew|dmg|Version
 :--:|:--:|:--:|:--:|:--:|:--:
 Tomcat|8080|:heavy_check_mark:|||v2.0.0.M2
 Fluentd|8888,24230|||:heavy_check_mark:|v2.3
