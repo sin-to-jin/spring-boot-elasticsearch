@@ -25,14 +25,14 @@ brew cask install java
 
 ``` sh
 brew install elasticsearch
-elasticsearch
+elasticsearch # Start Elasticsearch.
 ```
 
 ### Install Kibana
 
 ``` sh
 brew install kibana
-kibana
+kibana # Start Kibana.
 ```
 
 ### Install this project
@@ -47,10 +47,10 @@ cd spring-boot-elasticsearch
 ### Install Fluentd
 
 ``` sh
-wget http://packages.treasuredata.com.s3.amazonaws.com/2/macosx/td-agent-2.3.0-0.dmg
-sudo /opt/td-agent/embedded/bin/fluent-gem install fluent-plugin-elasticsearch
-sudo launchctl unload /Library/LaunchDaemons/td-agent.plist
-sudo launchctl load /Library/LaunchDaemons/td-agent.plist
+wget http://packages.treasuredata.com.s3.amazonaws.com/2/macosx/td-agent-2.3.0-0.dmg # Execute this dmg-file. 
+sudo /opt/td-agent/embedded/bin/fluent-gem install fluent-plugin-elasticsearch # Install gem for Fluentd.
+sudo launchctl unload /Library/LaunchDaemons/td-agent.plist # Invalidate settings.
+sudo launchctl load /Library/LaunchDaemons/td-agent.plist # Activate settings.
 ```
 
 - Settinds [td-agent.conf](settings/etc/td-agent/td-agent.conf)
@@ -104,9 +104,9 @@ tomcat - fluentd
     kibana
 ```
 
-Server|Port|Homebrew|Version
-:--:|:--:|:--:|:--:
-Tomcat|8080||v2.0.0.M2
-Fluentd|8888,24230||v2.3
-Elasticsearch|9200,9300|:heavy_check_mark:|v5.4.2
-Kibana|5601|:heavy_check_mark:|v5.4.2
+Server|Port|Build In|Homebrew|dmg|Version
+:--:|:--:|:--:|:--:|:--:|:--:
+Tomcat|8080|:heavy_check_mark:|||v2.0.0.M2
+Fluentd|8888,24230|||:heavy_check_mark:|v2.3
+Elasticsearch|9200,9300|:heavy_check_mark:|:heavy_check_mark:||v5.4.2
+Kibana|5601||:heavy_check_mark:||v5.4.2
