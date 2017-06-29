@@ -10,6 +10,8 @@ machine:
     GRADLE_OPTS: -Xmx4G -Dorg.gradle.daemon=true
 
 dependencies:
+  pre:
+    - chmod -x ./gradlew
   override:
     - ./gradlew testClasses
 
