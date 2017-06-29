@@ -1,0 +1,22 @@
+machine:
+  java:
+    version: openjdk8
+  timezone:
+    Asia/Tokyo
+  environment:
+    _JAVA_OPTIONS: "-Xms512m -Xmx1024m"
+    GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx1024m -XX:+HeapDumpOnOutOfMemoryError" -Dorg.gradle.daemon=true'
+  environment:
+    GRADLE_OPTS: -Xmx4G -Dorg.gradle.daemon=true
+
+dependencies:
+  pre:
+    - chmod +x ./gradlew
+  override:
+    - ./gradlew testClasses
+
+test:  
+  override:
+    - ./gradlew --full-stacktrace check
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/ && find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;:
