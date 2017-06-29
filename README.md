@@ -1,4 +1,5 @@
 # spring-boot-elasticsearch
+[![CircleCI](https://circleci.com/gh/ogasawaraShinnosuke/spring-boot-elasticsearch.svg?style=svg)](https://circleci.com/gh/ogasawaraShinnosuke/spring-boot-elasticsearch)
 [![codebeat badge](https://codebeat.co/badges/4b9f1d23-487a-4d17-812a-168a81c5d3bd)](https://codebeat.co/projects/github-com-ogasawarashinnosuke-spring-boot-elasticsearch-master)
 [![Official HP](https://img.shields.io/badge/official-homepage-green.svg)](https://ogasawarashinnosuke.github.io/spring-boot-elasticsearch/)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
