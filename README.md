@@ -4,13 +4,13 @@
 [![Official HP](https://img.shields.io/badge/official-homepage-green.svg)](https://ogasawarashinnosuke.github.io/spring-boot-elasticsearch/)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
-To support elasticsearch v5.4 with spring-boot v2.0.0.M2 and Kibana v5.4, Fluentd v2.3.
+To support elasticsearch v5.5.0 with spring-boot v2.0.0.M2 and Kibana v5.5.0, Fluentd v2.3.
 * Java v1.8
-* Gradle v4.0
+* Gradle v4.0.1
 * Spring Boot v2.0.0.M2
 * Tomcat v8
-* Elasticsearch v5.4.2
-* Kibana v5.4.2
+* Elasticsearch v5.5.0
+* Kibana v5.5.0
 * Fluentd v2.3
 
 ## How to Use
@@ -26,6 +26,7 @@ brew cask install java
 
 ``` sh
 brew install elasticsearch
+elasticsearch -V
 elasticsearch # Start Elasticsearch.
 ```
 
@@ -33,6 +34,7 @@ elasticsearch # Start Elasticsearch.
 
 ``` sh
 brew install kibana
+kibana -V
 kibana # Start Kibana.
 ```
 
