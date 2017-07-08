@@ -113,3 +113,5 @@ Tomcat|8080|:heavy_check_mark:|||v2.0.0.M2
 Fluentd|8888,24230|||:heavy_check_mark:|v2.3
 Elasticsearch|9200,9300|:heavy_check_mark:|:heavy_check_mark:||v5.4.2
 Kibana|5601||:heavy_check_mark:||v5.4.2
+
+*It's also possible to use Logstash and Beats.*
