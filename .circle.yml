@@ -19,4 +19,6 @@ test:
   override:
     - ./gradlew test jacocoTestReport coveralls
   post:
-    - mkdir -p $CIRCLE_TEST_REPORTS/junit/ && find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;:
+    - mkdir -p $CIRCLE_ARTIFACTS/junit/ && find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} $CIRCLE_ARTIFACTS/junit/ \;:
+    - mkdir -p $CIRCLE_ARTIFACTS/site/jacoco
+    - mv target/site/jacoco/ $CIRCLE_ARTIFACTS/site/jacoco
