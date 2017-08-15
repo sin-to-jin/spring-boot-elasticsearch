@@ -20,7 +20,7 @@ public class CryptoCurrencyServiceImpl implements CryptoCurrencyService {
     private static final Logger LOG = LoggerFactory.getLogger(CryptoCurrencyServiceImpl.class);
 
     @Autowired
-    private CryptoCurrencyRepository repository;
+    protected CryptoCurrencyRepository repository;
 
     @Override
     public List<CryptoCurrency> findByModel(CryptoCurrency cryptoCurrency) {
