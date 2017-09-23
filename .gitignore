@@ -29,3 +29,5 @@ logs
 
 *.iml
 .java-version
+
+out/*

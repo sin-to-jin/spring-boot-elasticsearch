@@ -1,8 +1,8 @@
 package com.orgsin.sbe.domain.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
@@ -13,8 +13,8 @@ import java.util.List;
 /**
  * Created by ogasawara.shinnosuke on 2017/06/21.
  */
-@Data
-@AllArgsConstructor
+@Getter
+@ToString
 @NoArgsConstructor
 @Document(indexName = "crypto-currencies", type = "crypto-currencies")
 public class CryptoCurrency {
