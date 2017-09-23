@@ -7,10 +7,10 @@
 To support elasticsearch v5.5.0 with spring-boot v2.0.0.M2 and Kibana v5.5.0, Fluentd v2.3.
 * Java v1.8
 * Gradle v4.0.1
-* Spring Boot v2.0.0.M2
+* Spring Boot v2.0.0.M3
 * Tomcat v8
-* Elasticsearch v5.5.0
-* Kibana v5.5.0
+* Elasticsearch v5.5.1
+* Kibana v5.5.1
 * Fluentd v2.3
 * Spock(Groovy v2.4.12) v1.1
 
