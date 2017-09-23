@@ -23,11 +23,17 @@ public class CryptoCurrencyServiceImpl implements CryptoCurrencyService {
     @Override
     public List<CryptoCurrency> findByModel(CryptoCurrency cryptoCurrency) {
         log.info(cryptoCurrency.toString());
-        if (StringUtils.isNotBlank(cryptoCurrency.getName())) return repository.findByName(cryptoCurrency.getName());
-        if (StringUtils.isNotBlank(cryptoCurrency.getMarketCapitalization())) return repository.findByMarketCapitalization(cryptoCurrency.getMarketCapitalization());
-        if (StringUtils.isNotBlank(cryptoCurrency.getDetail())) return repository.findByDetail(cryptoCurrency.getDetail());
-        if (cryptoCurrency.getKeywords() != null && !cryptoCurrency.getKeywords().isEmpty()) return repository.findByKeywords(cryptoCurrency.getKeywords());
-        return Lists.newArrayList(repository.findAll());
+        if (StringUtils.isNotBlank(cryptoCurrency.getName())) {
+            return repository.findByName(cryptoCurrency.getName());
+        } else if (StringUtils.isNotBlank(cryptoCurrency.getMarketCapitalization())) {
+            return repository.findByMarketCapitalization(cryptoCurrency.getMarketCapitalization());
+        } else if (StringUtils.isNotBlank(cryptoCurrency.getDetail())) {
+            return repository.findByDetail(cryptoCurrency.getDetail());
+        } else if (cryptoCurrency.getKeywords() != null && !cryptoCurrency.getKeywords().isEmpty()) {
+            return repository.findByKeywords(cryptoCurrency.getKeywords());
+        } else {
+            return Lists.newArrayList(repository.findAll());
+        }
     }
 
     @Override
