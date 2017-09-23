@@ -1,6 +1,5 @@
 package com.orgsin.sbe.application.service.impl
 
-import com.orgsin.sbe.application.service.impl.CryptoCurrencyServiceImpl
 import com.orgsin.sbe.domain.model.CryptoCurrency
 import com.orgsin.sbe.domain.model.CryptoCurrencyRepository
 import spock.lang.Specification
@@ -10,12 +9,8 @@ import spock.lang.Specification
  * Created by sinnosuke on 2017/08/15.
  */
 class CryptoCurrencyServiceImplTest extends Specification {
-    CryptoCurrencyServiceImpl service = new CryptoCurrencyServiceImpl()
     CryptoCurrencyRepository repository = Mock()
-
-    def setup() {
-        service.repository = repository
-    }
+    CryptoCurrencyServiceImpl service = new CryptoCurrencyServiceImpl(repository)
 
     def "find by `name`"() {
         given:
