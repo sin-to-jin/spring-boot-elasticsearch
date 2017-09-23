@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 /**
  * Created by ogasawara.shinnosuke on 2017/06/21.
  */
