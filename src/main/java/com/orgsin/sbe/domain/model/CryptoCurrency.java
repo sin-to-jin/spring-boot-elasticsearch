@@ -1,6 +1,5 @@
 package com.orgsin.sbe.domain.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
