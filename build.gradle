@@ -5,7 +5,8 @@ buildscript {
         maven { url 'http://repo.spring.io/milestone' }
     }
     dependencies {
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M2'
+        // TODO after M4 is uploaded
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M3'
     }
 }
 
@@ -19,7 +20,9 @@ apply plugin: 'groovy'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: "jacoco"
+apply plugin: 'war'
 
+// 9 is future
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
@@ -36,10 +39,10 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.16'
-    compile group: 'com.google.guava', name: 'guava', version: '22.0'
+    compile group: 'com.google.guava', name: 'guava', version: '23.0'
     compile "org.springframework.boot:spring-boot-starter-web"
     compile 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+    providedCompile group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
     testCompile "org.springframework.boot:spring-boot-starter-test"
     testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
     testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4'
@@ -48,10 +51,10 @@ dependencies {
 
 task wrapper(type: Wrapper) { gradleVersion = '4.0.1' }
 
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled true
-        html.destination file("${buildDir}/jacocoHtml")
-    }
-}
+//jacocoTestReport {
+//    reports {
+//        xml.enabled true
+//        html.enabled true
+//        html.destination file("${buildDir}/jacocoHtml")
+//    }
+//}

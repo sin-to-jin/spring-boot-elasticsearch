@@ -2,20 +2,21 @@ package com.orgsin.sbe.ui.controller;
 
 import com.orgsin.sbe.application.service.CryptoCurrencyService;
 import com.orgsin.sbe.domain.model.CryptoCurrency;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
+
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by ogasawara.shinnosuke on 2017/06/21.
  */
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/crypto-currencies")
 public class CryptoCurrencyController {
 
-    @Autowired
-    private CryptoCurrencyService service;
+    private final CryptoCurrencyService service;
 
     @RequestMapping(method = RequestMethod.GET)
     public List<CryptoCurrency> findAll(CryptoCurrency cryptoCurrency) {
