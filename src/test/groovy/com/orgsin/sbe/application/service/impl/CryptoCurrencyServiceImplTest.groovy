@@ -6,7 +6,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /**
- * {@see CryptoCurrencyServiceImpl}
+ * @see CryptoCurrencyServiceImpl
  * Created by sinnosuke on 2017/08/15.
  */
 class CryptoCurrencyServiceImplTest extends Specification {
