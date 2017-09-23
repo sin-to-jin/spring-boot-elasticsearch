@@ -44,8 +44,19 @@ kibana # Start Kibana.
 ``` sh
 git clone git@github.com:ogasawaraShinnosuke/spring-boot-elasticsearch.git
 cd spring-boot-elasticsearch
+./gradlew clean
 ./gradlew build
 ./gradlew bootRun
+```
+
+#### Test
+
+``` sh
+./gradlew test
+
+# Coverage Report
+./gradlew jacocoTestReport
+open build/jacocoHtml/index.html (Optional)
 ```
 
 ### Install Fluentd
@@ -110,7 +121,7 @@ tomcat - fluentd
 
 Server|Port|Built In|Homebrew|dmg|Version
 :--:|:--:|:--:|:--:|:--:|:--:
-Tomcat|8080|:heavy_check_mark:|||v2.0.0.M2
+Tomcat|8080|:heavy_check_mark:|||v2.0.0.M3
 Fluentd|8888,24230|||:heavy_check_mark:|v2.3
 Elasticsearch|9200,9300|:heavy_check_mark:|:heavy_check_mark:||v5.4.2
 Kibana|5601||:heavy_check_mark:||v5.4.2
